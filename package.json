@@ -1,0 +1,20 @@
+{
+  "name": "auction-backend-gql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "3FE 3LE (Frank Licona)",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.9.27"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
