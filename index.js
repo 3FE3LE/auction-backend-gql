@@ -10,10 +10,13 @@ connect();
 // server
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    engine: {    
+        reportSchema: true
+      }
 
 });
 // start server
-server.listen().then( ({url}) => {
+server.listen({ port: process.env.PORT || 4000 }).then( ({url}) => {
     console.log(`Server on ${url}`);
 })
