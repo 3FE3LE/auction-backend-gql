@@ -1,23 +1,17 @@
 const mongoose = require('mongoose');
-const UsersSchema = mongoose.Schema({
+const ProductsSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
         trim: true
     },
-    lastName: {
-        type: String,
+    cant: {
+        type: Number,
         required: true,
         trim: true
     },
-    email: {
-        type: String,
-        required: true,
-        trim: true,
-        unique: true,
-    },
-    password: {
-        type: String,
+    price: {
+        type: Number,
         required: true,
         trim: true
     },
@@ -27,4 +21,6 @@ const UsersSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('User', UsersSchema);
+ProductsSchema.index({name: 'text' })
+
+module.exports = mongoose.model('Product', ProductsSchema);
