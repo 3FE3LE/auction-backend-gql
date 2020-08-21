@@ -23,9 +23,8 @@ const createJWT = (user, key, exp) => {
 // Resolvers
 const resolvers = {
     Query: {
-        getUser: async (_, { token }) => {
-            const userId = await jwt.verify(token, process.env.KEY_WORD)
-            return userId;
+        getUser: async (_, {  }, ctx) => {
+            return ctx;
         },
         getProducts: async () => {
             try {
