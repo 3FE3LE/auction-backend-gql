@@ -24,7 +24,7 @@ const createJWT = (user, key, exp) => {
 const resolvers = {
     Query: {
         getUser: async (_, {  }, ctx) => {
-            return ctx;
+            return ctx.user;
         },
         getProducts: async () => {
             try {
