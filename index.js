@@ -19,7 +19,6 @@ const server = new ApolloServer({
     },
     context: ({ req }) => {
         const token = req.headers['authorization']
-        console.log(token)
         if (token) {
             try {
                 const user = jwt.verify(token.replace("Bearer ",''), process.env.KEY_WORD)
