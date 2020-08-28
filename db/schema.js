@@ -25,7 +25,7 @@ const typeDefs = gql`
     type Product {
         id: ID
         name: String
-        cant: Int
+        quantity: Int
         price: Float
         created_at: String
     }
@@ -42,7 +42,7 @@ const typeDefs = gql`
 
     type OrderGroup {
         id: ID
-        cant: Int
+        quantity: Int
     }
 
     type TopClient {
@@ -77,7 +77,7 @@ const typeDefs = gql`
 
     input ProductInput {
         name: String!
-        cant: Int!
+        quantity: Int!
         price: Float!
     }
 
@@ -88,7 +88,7 @@ const typeDefs = gql`
 
     input OrderProductInput {
         id: ID
-        cant: Int
+        quantity: Int
     }
 
     input OrderInput {

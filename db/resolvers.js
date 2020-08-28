@@ -298,10 +298,10 @@ const resolvers = {
             for await (const article of input.order) {
                 const { id } = article;
                 const product = await Product.findById(id);
-                if (article.cant > product.cant) {
+                if (article.quantity > product.quantity) {
                     throw new Error(`The article: ${product.name} exceeds available quantity`);
                 } else {
-                    product.cant = product.cant - article.cant;
+                    product.quantity = product.quantity - article.quantity;
                     await product.save()
                 }
             }
@@ -337,10 +337,10 @@ const resolvers = {
             for await (const article of input.order) {
                 const { id } = article;
                 const product = await Product.findById(id);
-                if (article.cant > product.cant) {
+                if (article.quantity > product.quantity) {
                     throw new Error(`The article: ${product.name} exceeds available quantity`);
                 } else {
-                    product.cant = product.cant - article.cant;
+                    product.quantity = product.quantity - article.quantity;
                     await product.save()
                 }
             }

@@ -5,7 +5,7 @@ const ProductsSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-    cant: {
+    quantity: {
         type: Number,
         required: true,
         trim: true
